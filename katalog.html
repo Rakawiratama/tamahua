@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog & Genre - TAMAHUA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dark-mode">
+    <header>
+        <nav class="navbar">
+            <div class="logo">TAMAHUA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html" class="active">Katalog & Genre</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Jelajahi Berdasarkan Genre</h2>
+        
+        <div class="genre-filter" id="genre-filter">
+            <button class="btn btn-genre active" data-genre="all">Semua</button>
+            </div>
+
+        <p class="member-status-info">Status Akses Anda: <span id="katalog-member-status">Memuat...</span></p>
+
+        <div class="comic-grid" id="manhua-list">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TAMAHUA. By Karaka</p>
+    </footer>
+
+    <script type="module" src="assets/js/membership.js"></script>
+    <script type="module" src="assets/js/catalog.js"></script>
+</body>
+</html>

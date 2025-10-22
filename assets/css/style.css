@@ -1,0 +1,448 @@
+
+/* ======================================================================= */
+/* 0. ROOT VARIABLES & IMPORTS */
+/* ======================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Color Palette (Deep Space Theme) */
+    --color-bg-primary: #0d001f;      /* Background Utama */
+    --color-bg-secondary: #1f1233;    /* Background Card/Form */
+    --color-accent-primary: #ff4757;  /* Merah Neon (Aksi/CTA/Individual) */
+    --color-accent-secondary: #32ff7e; /* Hijau Neon (Success/Premium Penuh) */
+    --color-text-primary: #f0f0f0;    /* Teks Utama */
+    --color-text-secondary: #b3b3b3;  /* Teks Sekunder */
+    --color-border: #3a2550;          /* Border subtle */
+
+    /* Typography */
+    --font-family-primary: 'Poppins', sans-serif;
+
+    /* Spacing & Effects */
+    --spacing-default: 20px;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* ======================================================================= */
+/* 1. BASE & RESET */
+/* ======================================================================= */
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body.dark-mode { 
+    font-family: var(--font-family-primary); 
+    background-color: var(--color-bg-primary); 
+    color: var(--color-text-primary); 
+    line-height: 1.6; 
+}
+
+a { 
+    color: var(--color-text-primary); 
+    text-decoration: none; 
+    transition: color var(--transition-speed) ease; 
+}
+
+a:hover { 
+    color: var(--color-accent-primary); 
+}
+.link-inline { 
+    color: var(--color-accent-secondary); 
+    font-weight: 600;
+    text-decoration: underline;
+}
+.link-inline:hover {
+    color: var(--color-accent-primary);
+}
+
+/* Main Container */
+main { 
+    min-height: calc(100vh - 120px); 
+    padding: 40px 5%; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* Typography Hierarchy */
+h1 { font-size: 3.5em; font-weight: 700; color: var(--color-text-primary); }
+h2 { 
+    font-size: 2.2em; 
+    margin-bottom: 25px; 
+    border-bottom: 3px solid var(--color-accent-primary); 
+    padding-bottom: 5px; 
+    display: inline-block; 
+}
+h3 { color: var(--color-text-primary); }
+p { color: var(--color-text-secondary); }
+
+
+/* ======================================================================= */
+/* 2. UTILITY & STATUS */
+/* ======================================================================= */
+
+.text-center { text-align: center; }
+.btn-full-width { width: 100%; margin-top: 25px; padding: 12px 20px;}
+
+.section-paragraph { margin-bottom: 20px; }
+.accent-title { color: var(--color-accent-primary); margin-top: 20px; margin-bottom: 10px;}
+
+/* Status Colors */
+.is-success { color: var(--color-accent-secondary); } 
+.is-standard { color: var(--color-accent-primary); }  
+.is-premium { color: var(--color-accent-secondary); } 
+
+/* List style for 'Tentang' page */
+.styled-list { list-style: none; padding-left: 0; }
+.styled-list li { margin-top: 10px; padding-left: 20px; position: relative; color: var(--color-text-secondary); }
+.styled-list li::before { content: '»'; color: var(--color-accent-secondary); position: absolute; left: 0; font-size: 1.2em; }
+
+
+/* ======================================================================= */
+/* 3. HEADER & NAVIGATION */
+/* ======================================================================= */
+
+header { 
+    background-color: var(--color-bg-primary); 
+    border-bottom: 1px solid var(--color-border); 
+    padding: 18px 5%; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+}
+
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.logo { 
+    font-size: 2em; 
+    font-weight: 700; 
+    color: var(--color-accent-primary); 
+    letter-spacing: 1px;
+}
+
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 35px; }
+.nav-links a { font-weight: 500; padding-bottom: 5px; }
+.nav-links a.active { color: var(--color-accent-primary); border-bottom: 2px solid var(--color-accent-primary); }
+
+
+/* ======================================================================= */
+/* 4. BUTTONS & ACTIONS */
+/* ======================================================================= */
+
+.btn { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: all var(--transition-speed) ease; 
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+.btn-primary { 
+    background-color: var(--color-accent-primary); 
+    color: var(--color-text-primary); 
+}
+.btn-primary:hover { 
+    background-color: #ff6b81; 
+    transform: translateY(-2px); 
+}
+
+.btn-secondary { 
+    background-color: transparent; 
+    border: 2px solid var(--color-accent-primary); 
+    color: var(--color-accent-primary); 
+}
+.btn-secondary:hover { 
+    background-color: rgba(255, 71, 87, 0.1); 
+    transform: translateY(-2px); 
+}
+
+.glow-on-hover:not(:disabled):hover { 
+    box-shadow: 0 0 10px var(--color-accent-primary), 0 0 20px var(--color-accent-primary); 
+}
+
+/* Style untuk tombol Opsi Beli Individual di Hero Section */
+.btn-individual {
+    background-color: transparent;
+    /* Menggunakan warna aksen sekunder (hijau) untuk membedakan */
+    border: 2px solid var(--color-accent-secondary) !important; 
+    color: var(--color-accent-secondary) !important;
+}
+
+.btn-individual:hover {
+    background-color: rgba(50, 255, 126, 0.1) !important;
+    transform: translateY(-2px); 
+}
+
+/* Style untuk tombol Premium Penuh di index saat belum aktif */
+.btn-full-access {
+    border: 2px solid var(--color-accent-primary) !important; 
+    color: var(--color-accent-primary) !important;
+}
+
+.btn-full-access:hover {
+    background-color: rgba(255, 71, 87, 0.1) !important;
+}
+
+
+/* ======================================================================= */
+/* 5. HOMEPAGE & HERO */
+/* ======================================================================= */
+
+.hero-section { 
+    padding: 80px 0 50px 0; 
+    text-align: center; 
+}
+.hero-content .tagline { 
+    color: var(--color-accent-primary); 
+    margin-bottom: 30px; 
+    font-size: 1.2em; 
+}
+.hero-actions { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.member-status-text { 
+    margin-top: 15px; 
+    font-weight: 600; 
+    flex-basis: 100%;
+}
+.member-status-text.is-premium { 
+    color: var(--color-accent-secondary); 
+    text-shadow: 0 0 5px rgba(50, 255, 126, 0.5); 
+}
+.member-status-text.is-standard { 
+    color: var(--color-accent-primary); 
+}
+
+.popular-section { 
+    margin-top: 50px; 
+    padding-top: 20px; 
+    border-top: 1px solid var(--color-border); 
+}
+.popular-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 30px;
+    padding-bottom: 15px;
+}
+.popular-list .comic-card {
+    min-width: 250px;
+    flex-shrink: 0;
+}
+
+
+/* ======================================================================= */
+/* 6. CATALOG & COMIC CARDS */
+/* ======================================================================= */
+
+.member-status-info { 
+    font-size: 1.1em; 
+    font-weight: 500; 
+    margin-bottom: 20px; 
+    color: var(--color-text-secondary); 
+}
+
+.comic-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    padding-top: 10px; 
+}
+
+.comic-card { 
+    background-color: var(--color-bg-secondary); 
+    border-radius: var(--border-radius); 
+    overflow: hidden; 
+    position: relative; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; 
+}
+
+.comic-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 71, 87, 0.7); 
+}
+
+.comic-cover { 
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.card-content { 
+    padding: 15px; 
+}
+.card-content h3 { margin-bottom: 5px; font-size: 1.2em; }
+.card-content p { font-size: 0.9em; height: 40px; overflow: hidden; }
+
+.premium-badge, .standard-badge {
+    display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 700; margin-top: 10px;
+}
+.premium-badge { background-color: var(--color-accent-primary); color: var(--color-text-primary); }
+.standard-badge { background-color: var(--color-accent-secondary); color: var(--color-bg-primary); }
+
+/* Kunci Premium Overlay */
+.member-overlay { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    background-color: rgba(0, 0, 0, 0.98); 
+    display: flex; justify-content: center; align-items: center; 
+    text-align: center; z-index: 5; 
+}
+.member-overlay-text { 
+    color: var(--color-accent-primary); font-size: 1.4em; font-weight: 700; 
+    padding: 15px; border: 3px solid var(--color-accent-primary); border-radius: 10px; 
+    animation: pulse 1.5s infinite; text-shadow: 0 0 8px rgba(255, 71, 87, 0.8);
+}
+
+
+/* ======================================================================= */
+/* 7. GENRE FILTER */
+/* ======================================================================= */
+
+.genre-filter { 
+    margin-bottom: 30px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+.btn-genre { 
+    padding: 8px 15px; 
+    background-color: var(--color-bg-secondary); 
+    color: var(--color-text-secondary); 
+    border: 1px solid var(--color-border); 
+    border-radius: 20px;
+}
+.btn-genre.active, .btn-genre:hover {
+    background-color: var(--color-accent-primary); 
+    color: var(--color-text-primary); 
+    border-color: var(--color-accent-primary); 
+    transform: scale(1.05);
+}
+
+
+/* ======================================================================= */
+/* 8. DETAIL KOMIK */
+/* ======================================================================= */
+
+.comic-detail-main { padding-top: 20px; }
+.back-to-katalog { margin-bottom: 30px; }
+
+.detail-cover { 
+    max-width: 300px; 
+    height: auto; 
+    border-radius: var(--border-radius); 
+    margin: 20px 0; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); 
+}
+
+.synopsis { font-size: 1.1em; margin-top: 20px; }
+
+.read-section { 
+    margin-top: 40px; 
+    padding: 30px; 
+    background-color: var(--color-bg-secondary); 
+    border-radius: var(--border-radius); 
+    border: 1px solid var(--color-border);
+}
+
+
+/* ======================================================================= */
+/* 9. FORMS (ORDER, KELOLA & KONTAK) */
+/* ======================================================================= */
+
+.order-page-main { max-width: 700px; }
+
+/* Styling umum untuk semua form */
+form { 
+    background-color: var(--color-bg-secondary); 
+    padding: 30px; 
+    border-radius: var(--border-radius); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    max-width: 600px; 
+    margin: 30px auto; 
+}
+.order-form-container { max-width: 700px; margin: 30px auto; } 
+
+label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--color-accent-primary); }
+input[type="text"], input[type="email"], input[type="tel"], textarea { 
+    width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--color-border); 
+    background-color: var(--color-bg-primary); color: var(--color-text-primary); border-radius: 4px; 
+}
+input:focus, textarea:focus { border-color: var(--color-accent-primary); box-shadow: 0 0 5px rgba(255, 71, 87, 0.5); }
+
+
+/* Order Specific */
+.order-summary { 
+    margin-top: 30px; padding: 20px; background-color: var(--color-bg-primary); 
+    border: 1px solid var(--color-accent-primary); border-radius: 5px;
+}
+.order-summary .summary-title { color: var(--color-accent-primary); }
+.order-summary .price-info span { color: var(--color-accent-secondary); font-weight: bold; font-size: 1.2em;}
+.order-disclaimer { margin-top: 20px; color: var(--color-text-secondary); }
+
+/* Contact Specific */
+.contact-info { 
+    margin-top: 30px; padding: 20px; background-color: var(--color-bg-secondary); 
+    border-radius: var(--border-radius); 
+}
+
+
+/* Status Message Box */
+.message-container { 
+    text-align: center; margin-top: 20px; padding: 20px; 
+    background-color: var(--color-bg-secondary); border-radius: var(--border-radius);
+}
+/* Pesan sukses AKTIVASI */
+.success-message { 
+    border: 2px solid var(--color-accent-secondary); 
+}
+.success-title { 
+    color: var(--color-accent-secondary); 
+}
+/* Pesan GAGAL/NONAKTIF (Untuk kelola_membership.html) */
+.disable-message-style {
+    border: 2px solid var(--color-accent-primary);
+}
+.disable-message-style .success-title.is-standard {
+    color: var(--color-accent-primary);
+}
+
+
+/* ======================================================================= */
+/* 10. FOOTER & ANIMATIONS */
+/* ======================================================================= */
+
+footer { 
+    text-align: center; 
+    padding: 25px 0; 
+    border-top: 1px solid var(--color-border); 
+    color: var(--color-text-secondary); 
+    font-size: 0.9em; 
+}
+
+@keyframes pulse { 
+    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4); } 
+    70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); } 
+    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); } 
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Premium Penuh - TAMAHUA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dark-mode">
+    <header>
+        <nav class="navbar">
+            <div class="logo">TAMAHUA</div>
+        </nav>
+    </header>
+
+    <main class="order-page-main">
+        <h2 class="text-center">Konfirmasi Order Membership Premium Penuh</h2>
+        
+        <form id="order-form" class="order-form-container full-order">
+            <label for="nama_lengkap">Nama Lengkap:</label>
+            <input type="text" id="nama_lengkap" value="Contoh Nama" required>
+
+            <label for="email_order">Email Akun:</label>
+            <input type="email" id="email_order" value="contoh@mail.com" required>
+
+            <div class="order-summary">
+                <h3 class="summary-title">Ringkasan Pesanan</h3>
+                <p>Produk: Membership Premium Penuh (Akses Semua Komik)</p>
+                <p class="price-info">Harga: <span>Rp 100.000,-</span></p>
+                <p class="payment-method">**Metode Pembayaran: Transfer Bank (Simulasi)</p>
+            </div>
+
+            <p class="order-disclaimer">Dengan menekan tombol di bawah, Anda mensimulasikan penyelesaian pembayaran dan aktivasi hak akses Premium Penuh.</p>
+
+            <button type="submit" id="complete-order-btn" class="btn btn-primary glow-on-hover btn-full-width">
+                Konfirmasi Pembayaran & Aktifkan Premium Penuh
+            </button>
+            
+            <p id="order-message" class="message-container success-message"">
+                <h3 class="success-title">🎉 Membership BERHASIL Diaktifkan!</h3>
+                <p>Akses Premium Penuh kini tersedia. Silakan <a href="katalog.html" class="btn btn-secondary">Kembali ke Katalog</a>.</p>
+            </p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TAMAHUA. By Karaka</p>
+    </footer>
+
+    <script type="module" src="assets/js/membership.js"></script>
+</body>
+</html>

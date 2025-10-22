@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Komik - TAMAHUA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="dark-mode">
+    <header>
+        <nav class="navbar">
+            <div class="logo">TAMAHUA</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog & Genre</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="comic-detail-main">
+        
+        <a href="katalog.html" class="btn btn-secondary back-to-katalog">
+            ← Kembali ke Katalog
+        </a>
+
+        <div id="comic-detail-container">
+            <h1>Memuat Judul...</h1>
+            <p><strong>Genre:</strong> Memuat | <strong>Status:</strong> Memuat</p>
+            <p id="detail-member-status">Akses: <span class="is-standard">Memuat...</span></p>
+            
+            <img src="" alt="Cover" class="detail-cover">
+            
+            <p class="synopsis">Memuat sinopsis...</p>
+            
+            <section class="read-section">
+                <h3>Mulai Membaca</h3>
+                <button id="read-chapter-btn" class="btn btn-primary glow-on-hover">
+                    Tombol Baca/Beli
+                </button>
+                <p class="access-info" id="access-message"></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 TAMAHUA. By Karaka</p>
+    </footer>
+
+    <script type="module" src="assets/js/membership.js"></script>
+    <script type="module" src="assets/js/catalog.js"></script>
+</body>
+</html>

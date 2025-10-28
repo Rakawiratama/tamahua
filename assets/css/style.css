@@ -1,31 +1,30 @@
-
 /* ======================================================================= */
-/* 0. ROOT VARIABLES & IMPORTS */
+/* VARIABLE DAN ASSET AWAL */
 /* ======================================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Color Palette (Deep Space Theme) */
-    --color-bg-primary: #0d001f;      /* Background Utama */
-    --color-bg-secondary: #1f1233;    /* Background Card/Form */
-    --color-accent-primary: #ff4757;  /* Merah Neon (Aksi/CTA/Individual) */
-    --color-accent-secondary: #32ff7e; /* Hijau Neon (Success/Premium Penuh) */
-    --color-text-primary: #f0f0f0;    /* Teks Utama */
-    --color-text-secondary: #b3b3b3;  /* Teks Sekunder */
-    --color-border: #3a2550;          /* Border subtle */
+    /* Palet Warna (Tema Gelap ala Luar Angkasa) */
+    --color-bg-primary: #0d001f;        
+    --color-bg-secondary: #1f1233;      
+    --color-accent-primary: #ff4757;    /* Warna utama buat tombol/aksi penting */
+    --color-accent-secondary: #32ff7e;  /* Warna buat status sukses/premium */
+    --color-text-primary: #f0f0f0;      
+    --color-text-secondary: #b3b3b3;    
+    --color-border: #3a2550;            
 
-    /* Typography */
+    /* Font Utama */
     --font-family-primary: 'Poppins', sans-serif;
 
-    /* Spacing & Effects */
+    /* Jarak dan Animasi */
     --spacing-default: 20px;
     --border-radius: 8px;
-    --transition-speed: 0.3s;
+    --transition-speed: 0.25s; 
 }
 
 /* ======================================================================= */
-/* 1. BASE & RESET */
+/* SETTING DASAR */
 /* ======================================================================= */
 
 * { 
@@ -34,6 +33,7 @@
     box-sizing: border-box; 
 }
 
+/* Setting dasar untuk mode gelap di seluruh body */
 body.dark-mode { 
     font-family: var(--font-family-primary); 
     background-color: var(--color-bg-primary); 
@@ -41,6 +41,7 @@ body.dark-mode {
     line-height: 1.6; 
 }
 
+/* Gaya dasar buat link */
 a { 
     color: var(--color-text-primary); 
     text-decoration: none; 
@@ -50,6 +51,8 @@ a {
 a:hover { 
     color: var(--color-accent-primary); 
 }
+
+/* Link di tengah teks yang ingin disorot */
 .link-inline { 
     color: var(--color-accent-secondary); 
     font-weight: 600;
@@ -59,7 +62,7 @@ a:hover {
     color: var(--color-accent-primary);
 }
 
-/* Main Container */
+/* Container utama, biar konten gak terlalu lebar di monitor besar */
 main { 
     min-height: calc(100vh - 120px); 
     padding: 40px 5%; 
@@ -67,11 +70,12 @@ main {
     margin: 0 auto;
 }
 
-/* Typography Hierarchy */
+/* Pengaturan Judul */
 h1 { font-size: 3.5em; font-weight: 700; color: var(--color-text-primary); }
 h2 { 
     font-size: 2.2em; 
     margin-bottom: 25px; 
+    /* Garis bawah penanda section */
     border-bottom: 3px solid var(--color-accent-primary); 
     padding-bottom: 5px; 
     display: inline-block; 
@@ -81,7 +85,7 @@ p { color: var(--color-text-secondary); }
 
 
 /* ======================================================================= */
-/* 2. UTILITY & STATUS */
+/* UTILITY DAN STATUS */
 /* ======================================================================= */
 
 .text-center { text-align: center; }
@@ -90,19 +94,25 @@ p { color: var(--color-text-secondary); }
 .section-paragraph { margin-bottom: 20px; }
 .accent-title { color: var(--color-accent-primary); margin-top: 20px; margin-bottom: 10px;}
 
-/* Status Colors */
+/* Warna buat teks status */
 .is-success { color: var(--color-accent-secondary); } 
-.is-standard { color: var(--color-accent-primary); }  
+.is-standard { color: var(--color-accent-primary); } 
 .is-premium { color: var(--color-accent-secondary); } 
 
-/* List style for 'Tentang' page */
+/* Gaya daftar kustom (pakai panah) */
 .styled-list { list-style: none; padding-left: 0; }
 .styled-list li { margin-top: 10px; padding-left: 20px; position: relative; color: var(--color-text-secondary); }
-.styled-list li::before { content: '»'; color: var(--color-accent-secondary); position: absolute; left: 0; font-size: 1.2em; }
+.styled-list li::before { 
+    content: '»'; 
+    color: var(--color-accent-secondary); 
+    position: absolute; 
+    left: 0; 
+    font-size: 1.2em; 
+}
 
 
 /* ======================================================================= */
-/* 3. HEADER & NAVIGATION */
+/* HEADER DAN NAVIGASI */
 /* ======================================================================= */
 
 header { 
@@ -130,14 +140,27 @@ header {
     letter-spacing: 1px;
 }
 
-.nav-links { list-style: none; display: flex; }
-.nav-links li { margin-left: 35px; }
-.nav-links a { font-weight: 500; padding-bottom: 5px; }
-.nav-links a.active { color: var(--color-accent-primary); border-bottom: 2px solid var(--color-accent-primary); }
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+}
+.nav-links li { 
+    margin-left: 35px; 
+}
+.nav-links a { 
+    font-weight: 500; 
+    padding-bottom: 5px; 
+}
+
+/* Penanda halaman yang sedang dibuka */
+.nav-links a.active { 
+    color: var(--color-accent-primary); 
+    border-bottom: 2px solid var(--color-accent-primary); 
+}
 
 
 /* ======================================================================= */
-/* 4. BUTTONS & ACTIONS */
+/* TOMBOL (BUTTONS) */
 /* ======================================================================= */
 
 .btn { 
@@ -152,6 +175,7 @@ header {
     display: inline-block;
 }
 
+/* Tombol Merah Neon (Primer) */
 .btn-primary { 
     background-color: var(--color-accent-primary); 
     color: var(--color-text-primary); 
@@ -161,6 +185,7 @@ header {
     transform: translateY(-2px); 
 }
 
+/* Tombol Border (Sekunder) */
 .btn-secondary { 
     background-color: transparent; 
     border: 2px solid var(--color-accent-primary); 
@@ -171,36 +196,34 @@ header {
     transform: translateY(-2px); 
 }
 
+/* Efek glow minimal saat hover */
 .glow-on-hover:not(:disabled):hover { 
-    box-shadow: 0 0 10px var(--color-accent-primary), 0 0 20px var(--color-accent-primary); 
+    box-shadow: 0 0 8px var(--color-accent-primary); 
 }
 
-/* Style untuk tombol Opsi Beli Individual di Hero Section */
+/* Tombol Opsi Individual (Warna Hijau) */
 .btn-individual {
     background-color: transparent;
-    /* Menggunakan warna aksen sekunder (hijau) untuk membedakan */
     border: 2px solid var(--color-accent-secondary) !important; 
     color: var(--color-accent-secondary) !important;
 }
-
 .btn-individual:hover {
     background-color: rgba(50, 255, 126, 0.1) !important;
     transform: translateY(-2px); 
 }
 
-/* Style untuk tombol Premium Penuh di index saat belum aktif */
+/* Tombol Akses Penuh (sebelum aktif) */
 .btn-full-access {
     border: 2px solid var(--color-accent-primary) !important; 
     color: var(--color-accent-primary) !important;
 }
-
 .btn-full-access:hover {
     background-color: rgba(255, 71, 87, 0.1) !important;
 }
 
 
 /* ======================================================================= */
-/* 5. HOMEPAGE & HERO */
+/* BERANDA DAN HERO SECTION */
 /* ======================================================================= */
 
 .hero-section { 
@@ -220,6 +243,7 @@ header {
     gap: 20px; 
 }
 
+/* Teks Status Member */
 .member-status-text { 
     margin-top: 15px; 
     font-weight: 600; 
@@ -233,6 +257,7 @@ header {
     color: var(--color-accent-primary); 
 }
 
+/* Daftar Komik Populer (Bisa digeser/scroll ke samping) */
 .popular-section { 
     margin-top: 50px; 
     padding-top: 20px; 
@@ -241,7 +266,7 @@ header {
 .popular-list {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: auto; 
     gap: 30px;
     padding-bottom: 15px;
 }
@@ -252,7 +277,7 @@ header {
 
 
 /* ======================================================================= */
-/* 6. CATALOG & COMIC CARDS */
+/* KATALOG DAN KARTU KOMIK */
 /* ======================================================================= */
 
 .member-status-info { 
@@ -262,6 +287,7 @@ header {
     color: var(--color-text-secondary); 
 }
 
+/* Grid buat nata kartu-kartu komik */
 .comic-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -278,9 +304,10 @@ header {
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; 
 }
 
+/* Efek 'terangkat' saat disentuh kursor */
 .comic-card:hover { 
     transform: translateY(-8px); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 71, 87, 0.7); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9), 0 0 8px rgba(255, 71, 87, 0.5); 
 }
 
 .comic-cover { 
@@ -296,28 +323,29 @@ header {
 .card-content h3 { margin-bottom: 5px; font-size: 1.2em; }
 .card-content p { font-size: 0.9em; height: 40px; overflow: hidden; }
 
+/* Badge status premium/standar */
 .premium-badge, .standard-badge {
     display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 700; margin-top: 10px;
 }
 .premium-badge { background-color: var(--color-accent-primary); color: var(--color-text-primary); }
 .standard-badge { background-color: var(--color-accent-secondary); color: var(--color-bg-primary); }
 
-/* Kunci Premium Overlay */
+/* Overlay penanda konten premium yang terkunci */
 .member-overlay { 
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    background-color: rgba(0, 0, 0, 0.98); 
+    background-color: rgba(0, 0, 0, 0.95); 
     display: flex; justify-content: center; align-items: center; 
     text-align: center; z-index: 5; 
 }
 .member-overlay-text { 
     color: var(--color-accent-primary); font-size: 1.4em; font-weight: 700; 
     padding: 15px; border: 3px solid var(--color-accent-primary); border-radius: 10px; 
-    animation: pulse 1.5s infinite; text-shadow: 0 0 8px rgba(255, 71, 87, 0.8);
+    text-shadow: 0 0 5px rgba(255, 71, 87, 0.8);
 }
 
 
 /* ======================================================================= */
-/* 7. GENRE FILTER */
+/* FILTER GENRE */
 /* ======================================================================= */
 
 .genre-filter { 
@@ -332,32 +360,49 @@ header {
     color: var(--color-text-secondary); 
     border: 1px solid var(--color-border); 
     border-radius: 20px;
+    transition: all var(--transition-speed) ease;
 }
 .btn-genre.active, .btn-genre:hover {
     background-color: var(--color-accent-primary); 
     color: var(--color-text-primary); 
     border-color: var(--color-accent-primary); 
-    transform: scale(1.05);
+    transform: scale(1.03); 
 }
 
 
 /* ======================================================================= */
-/* 8. DETAIL KOMIK */
+/* DETAIL KOMIK TUNGGAL */
 /* ======================================================================= */
 
 .comic-detail-main { padding-top: 20px; }
 .back-to-katalog { margin-bottom: 30px; }
 
+/* Kontainer Detail Komik (Dibuat lebih sempit dan ditengah) */
+#comic-detail-container {
+    /* Gaya visual kartu detail */
+    background-color: var(--color-bg-secondary);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    
+    /* SOLUSI LEBAR: Batasi maksimal 800px dan pusatkan */
+    max-width: 800px; 
+    margin: 0 auto 40px auto; 
+}
+
+/* Memusatkan gambar cover di dalam kontainer */
 .detail-cover { 
     max-width: 300px; 
     height: auto; 
     border-radius: var(--border-radius); 
-    margin: 20px 0; 
+    margin: 20px auto; /* Pusat horizontal */
+    display: block;    
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); 
 }
 
 .synopsis { font-size: 1.1em; margin-top: 20px; }
 
+/* Bagian untuk tombol baca/beli */
 .read-section { 
     margin-top: 40px; 
     padding: 30px; 
@@ -368,12 +413,12 @@ header {
 
 
 /* ======================================================================= */
-/* 9. FORMS (ORDER, KELOLA & KONTAK) */
+/* FORMULIR (ORDER, KELOLA & KONTAK) */
 /* ======================================================================= */
 
 .order-page-main { max-width: 700px; }
 
-/* Styling umum untuk semua form */
+/* Gaya umum untuk container formulir */
 form { 
     background-color: var(--color-bg-secondary); 
     padding: 30px; 
@@ -388,39 +433,49 @@ label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--color
 input[type="text"], input[type="email"], input[type="tel"], textarea { 
     width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--color-border); 
     background-color: var(--color-bg-primary); color: var(--color-text-primary); border-radius: 4px; 
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
-input:focus, textarea:focus { border-color: var(--color-accent-primary); box-shadow: 0 0 5px rgba(255, 71, 87, 0.5); }
+
+/* Efek fokus pada input */
+input:focus, textarea:focus { 
+    border-color: var(--color-accent-primary); 
+    box-shadow: 0 0 5px rgba(255, 71, 87, 0.5); 
+}
 
 
-/* Order Specific */
+/* Ringkasan Pemesanan */
 .order-summary { 
     margin-top: 30px; padding: 20px; background-color: var(--color-bg-primary); 
     border: 1px solid var(--color-accent-primary); border-radius: 5px;
 }
 .order-summary .summary-title { color: var(--color-accent-primary); }
-.order-summary .price-info span { color: var(--color-accent-secondary); font-weight: bold; font-size: 1.2em;}
+.order-summary .price-info span { 
+    color: var(--color-accent-secondary); 
+    font-weight: bold; 
+    font-size: 1.2em;
+}
 .order-disclaimer { margin-top: 20px; color: var(--color-text-secondary); }
 
-/* Contact Specific */
+/* Info Kontak Tambahan */
 .contact-info { 
     margin-top: 30px; padding: 20px; background-color: var(--color-bg-secondary); 
     border-radius: var(--border-radius); 
 }
 
 
-/* Status Message Box */
+/* Kotak Pesan Status */
 .message-container { 
     text-align: center; margin-top: 20px; padding: 20px; 
     background-color: var(--color-bg-secondary); border-radius: var(--border-radius);
 }
-/* Pesan sukses AKTIVASI */
+/* Pesan sukses (Hijau) */
 .success-message { 
     border: 2px solid var(--color-accent-secondary); 
 }
 .success-title { 
     color: var(--color-accent-secondary); 
 }
-/* Pesan GAGAL/NONAKTIF (Untuk kelola_membership.html) */
+/* Pesan Gagal/Nonaktif (Merah) */
 .disable-message-style {
     border: 2px solid var(--color-accent-primary);
 }
@@ -430,7 +485,7 @@ input:focus, textarea:focus { border-color: var(--color-accent-primary); box-sha
 
 
 /* ======================================================================= */
-/* 10. FOOTER & ANIMATIONS */
+/* FOOTER */
 /* ======================================================================= */
 
 footer { 
@@ -441,8 +496,105 @@ footer {
     font-size: 0.9em; 
 }
 
-@keyframes pulse { 
-    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4); } 
-    70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); } 
-    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); } 
+
+/* ======================================================================= */
+/* MEDIA QUERIES (RESPONSIVITAS) */
+/* ======================================================================= */
+
+/* Layar Sedang/Tablet (Maksimal 768px) */
+@media (max-width: 768px) {
+    /* Main Content dan Padding */
+    main { 
+        padding: 25px 3%; /* Kurangi padding samping */
+    }
+
+    /* Header dan Navigasi */
+    .navbar {
+        flex-direction: column; /* Tumpuk logo dan link */
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav-links li {
+        margin: 0 15px 10px 15px; /* Jarak antar link navigasi */
+    }
+
+    /* Pengaturan Judul */
+    h1 { 
+        font-size: 2.5em; /* Kecilkan H1 */
+    }
+    h2 { 
+        font-size: 1.8em; /* Kecilkan H2 */
+        margin-bottom: 20px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 50px 0 30px 0;
+    }
+    
+    /* Katalog Grid */
+    .comic-grid {
+        /* Ubah menjadi 1 kolom di layar tablet vertikal/hp horizontal */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 20px;
+    }
+
+    /* Detail Komik */
+    #comic-detail-container {
+        padding: 20px;
+    }
+    .detail-cover {
+        max-width: 250px; /* Kecilkan cover */
+    }
+
+    /* Formulir */
+    form {
+        padding: 20px;
+    }
+}
+
+/* Layar Kecil/Handphone (Maksimal 480px) */
+@media (max-width: 480px) {
+    
+    /* Pengaturan Judul */
+    h1 { 
+        font-size: 2em; /* Kecilkan H1 lagi */
+    }
+
+    /* Navigasi */
+    .nav-links li {
+        margin: 0 10px 10px 10px; /* Kurangi jarak antar link */
+    }
+
+    /* Katalog Grid */
+    .comic-grid {
+        /* Pastikan hanya 1 kolom untuk hp */
+        grid-template-columns: 1fr; 
+    }
+
+    /* Kartu Komik */
+    .comic-cover {
+        height: 300px; /* Kecilkan tinggi cover sedikit */
+    }
+
+    /* Tombol dan Input */
+    .btn, input, textarea {
+        font-size: 0.9em;
+    }
+    .btn-full-width {
+        padding: 10px 15px;
+    }
+
+    /* Detail Komik */
+    #comic-detail-container {
+        padding: 15px;
+    }
+    .read-section {
+        padding: 20px 15px;
+    }
 }
